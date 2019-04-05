@@ -13,6 +13,10 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../Train-Time-07/assets/style.css">
+
+    <!-- firebase ref  -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+
 </head>
 
 <body>
@@ -56,13 +60,13 @@
                             <form role="form">
 
                                 <div class="form-group">
-                                    <label for="train-input">Train Name</label>
+                                    <label for="train-name">Train Name</label>
                                     <input type="text" class="form-control form-control-sm" id="train-name">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="destination">Destination</label>
-                                    <input type="text" class="form-control form-control-sm" id="train-destination">
+                                    <input type="text" class="form-control form-control-sm" id="destination">
                                 </div>
 
                                 <div class="form-group">
@@ -75,8 +79,9 @@
 
                                 <div class="form-group">
                                     <label for="train-int">Frequency</label>
-                                    <input type="text" class="form-control form-control-sm" id="train-freq">
+                                    <input type="text" class="form-control form-control-sm" id="train-int">
                                 </div>
+                                <button class="btn btn-success" id="submit">Submit</button>
 
                             </form>
                         </div>
@@ -86,7 +91,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- train section end  -->
     </div>
 
