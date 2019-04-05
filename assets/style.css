@@ -1,0 +1,15 @@
+.container {
+    margin: 0 100px 0 100px;
+}
+
+.main {
+    margin-bottom: 32px;
+}
+
+.jumbotron {
+    background: steelblue;
+    color: ghostwhite;
+    text-shadow: 2px 2px steelblue;
+    background-image: url("../assets/images/train-background2.jpg");
+    background-position: center;
+}

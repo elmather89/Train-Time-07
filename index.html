@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Time</title>
+
+    <!-- styles  -->
+    <link rel="stylesheet" href="../Train-Time-07/assets/reset.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../Train-Time-07/assets/style.css">
+</head>
+
+<body>
+
+    <!-- main container  -->
+
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1><strong><i class="fa fa-train"></i> Locomotive Moments <i class="fa fa-train"></i></strong></h1>
+        </div>
+
+        <!-- train display div  -->
+        <section class="main">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Train Schedule</h2>
+                        </div>
+
+                        <div class="card-body" id="train-schedule"> trains go here </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- end train display div  -->
+
+        <!-- train input section  -->
+        <section class="main">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+
+                        <div class="card-header">
+                            <h2>Add New Train</h2>
+                        </div>
+
+                        <!-- input card  -->
+                        <div class="card-body">
+                            <form role="form">
+
+                                <div class="form-group">
+                                    <label for="train-input">Train Name</label>
+                                    <input type="text" class="form-control form-control-sm" id="train-name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="destination">Destination</label>
+                                    <input type="text" class="form-control form-control-sm" id="train-destination">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="first-time">Time of First Train's Arrival (military time - midnight =
+                                        0000,
+                                        1am
+                                        = 0100, etc.)</label>
+                                    <input type="text" class="form-control form-control-sm" id="first-time">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="train-int">Frequency</label>
+                                    <input type="text" class="form-control form-control-sm" id="train-freq">
+                                </div>
+
+                            </form>
+                        </div>
+                        <!-- end input  -->
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- train section end  -->
+    </div>
+
+    <!-- main container end  -->
+
+    <!-- script links  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../Train-Time-07/app.js"></script>
+    <!-- script links end  -->
+
+</body>
+
+</html>
