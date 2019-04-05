@@ -50,11 +50,17 @@ $(document).ready(function () {
         console.log(newTrainName);
 
         // append table with input data to #train-schedule div
-
+        var newRow = $("<tr>").append(
+            $("<td>").text(newTrainName),
+            $("<td>").text(newDest),
+            $("<td>").text(newFirstTime),
+            $("<td>").text(minutesAway) // ++++++ needs to be defined
+        );
 
         // interval function ===============================================================
           // needs to calculate next arrival based on the input interval value
           // also needs to show this calculation in minutes
+          var minutesAway = moment().add(newTrainInt, "m");
 
     });
 
