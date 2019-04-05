@@ -57,6 +57,8 @@ $(document).ready(function () {
             $("<td>").text(minutesAway) // ++++++ needs to be defined
         );
 
+        $("#train-schedule").append(newRow);
+
         // interval function ===============================================================
           // needs to calculate next arrival based on the input interval value
           // also needs to show this calculation in minutes
