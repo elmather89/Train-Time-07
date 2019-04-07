@@ -13,3 +13,30 @@
     background-image: url("../assets/images/train-background2.jpg");
     background-position: center;
 }
+
+#submit {
+    background-color: steelblue;
+    border: 3px solid black;
+}
+
+.button {
+    border-radius: 3px;
+    color: white;
+}
+
+.card {
+    border: 3px solid black;
+}
+
+.card-header {
+    background-color: steelblue;
+    border: 1px solid steelblue;
+}
+
+.card-header h2 {
+    color: white;
+}
+
+.row {
+    margin: 10px;
+}

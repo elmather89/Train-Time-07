@@ -14,8 +14,8 @@ $(document).ready(function () {
     var database = firebase.database();
 
     // change what is stored in FB
-      // needs to also clear the input data after submit
-      // .push method
+    // needs to also clear the input data after submit
+    // .push method
     $("#submit").on("click", function (event) {
         event.preventDefault();
 
@@ -24,12 +24,17 @@ $(document).ready(function () {
         var tFirstTime = $("#first-time").val().trim();
         var tTrainInt = $("#train-int").val().trim();
 
+        var formatTime = "h";
+        var convertTime = moment(tFirstTime, formatTime);
+        var reformatTime = convertTime.format("LT");
+
         var addTrain = {
             trainName: tName,
             trainDest: tDestination,
-            trainFirstTime: tFirstTime,
+            trainFirstTime: reformatTime,
             trainInt: tTrainInt
         };
+        console.log(convertTime);
 
         database.ref().push(addTrain);
 
@@ -37,7 +42,7 @@ $(document).ready(function () {
         $("#destination").val("");
         $("#first-time").val("");
         $("#train-int").val("");
-    });
+    }); // first function ends =================================================================
 
     database.ref().on("child_added", function (childSnapshot) {
         console.log(childSnapshot.val());
@@ -45,24 +50,24 @@ $(document).ready(function () {
         var newTrainName = childSnapshot.val().trainName;
         var newDest = childSnapshot.val().trainDest;
         var newFirstTime = childSnapshot.val().trainFirstTime;
-        var newTrainInt = childSnapshot.val().trainInt;
+        // var newTrainInt = childSnapshot.val().trainInt;
 
-        console.log(newTrainName);
+        console.log(newFirstTime);
 
         // append table with input data to #train-schedule div
         var newRow = $("<tr>").append(
             $("<td>").text(newTrainName),
             $("<td>").text(newDest),
-            $("<td>").text(newFirstTime),
-            $("<td>").text(minutesAway) // ++++++ needs to be defined
+            $("<td>").text(newFirstTime)
+            // $("<td>").text(minsFromNow) // ++++++ needs to be defined
         );
 
         $("#train-schedule").append(newRow);
 
-        // interval function ===============================================================
-          // needs to calculate next arrival based on the input interval value
-          // also needs to show this calculation in minutes
-          var minutesAway = moment().add(newTrainInt, "m");
+        // // // interval function ===============================================================
+        // //   // needs to calculate next arrival based on the input interval value
+        // //   // also needs to show this calculation in minutes
+        //   var minsFromNow = moment().endOf("hour").fromNow();
 
     });
 
