@@ -50,25 +50,47 @@ $(document).ready(function () {
         var newTrainName = childSnapshot.val().trainName;
         var newDest = childSnapshot.val().trainDest;
         var newFirstTime = childSnapshot.val().trainFirstTime;
-        // var newTrainInt = childSnapshot.val().trainInt;
+        var newTrainInt = childSnapshot.val().trainInt;
 
         console.log(newFirstTime);
 
+        // train schedule calculations ===========================================
+          // needs to calculate next arrival based on the input interval value
+          // also needs to show this calculation in minutes
+        var firstTimeReset = moment(newFirstTime, "hh:mm").subtract(10, "days");
+        console.log(firstTimeReset);
+
+        var now = moment();
+        console.log(moment(now).format("hh:mm:ss"));
+
+        var timeDiff = moment().diff(moment(firstTimeReset), "minutes");
+        console.log(timeDiff);
+
+        var remainingT = timeDiff % newTrainInt;
+        console.log(remainingT);
+
+        var minutesUntilTrain = newTrainInt - remainingT;
+        console.log("Minutes until train: " + minutesUntilTrain);
+
+        var nextTrainTime = moment().add(minutesUntilTrain, "minutes");
+        console.log("Next train arrives at " + moment(nextTrainTime).format("hh:mm"));
+
+        var nextTrainTimeConverted = moment(nextTrainTime).format("LT");
+
+        // end calculations ====================================================
+
+
         // append table with input data to #train-schedule div
         var newRow = $("<tr>").append(
-            $("<td>").text(newTrainName),
-            $("<td>").text(newDest),
-            $("<td>").text(newFirstTime)
-            // $("<td>").text(minsFromNow) // ++++++ needs to be defined
+            $("<td>").text("Train " +
+                newTrainName + " leaves for " +
+                newDest + " at " +
+                newFirstTime + " every " +
+                newTrainInt + " minutes" + " (next train arrives at " + nextTrainTimeConverted + ").")
         );
 
         $("#train-schedule").append(newRow);
-
-        // // // interval function ===============================================================
-        // //   // needs to calculate next arrival based on the input interval value
-        // //   // also needs to show this calculation in minutes
-        //   var minsFromNow = moment().endOf("hour").fromNow();
-
+        
     });
 
 }) // end
