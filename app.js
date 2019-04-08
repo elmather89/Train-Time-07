@@ -76,20 +76,40 @@ $(document).ready(function () {
         console.log("Next train arrives at " + moment(nextTrainTime).format("hh:mm"));
 
         var nextTrainTimeConverted = moment(nextTrainTime).format("LT");
+        var nextTrainInMins = newTrainInt - remainingT;
 
         // end calculations ====================================================
 
 
-        // append table with input data to #train-schedule div
+        // append table with input data to #train-schedule div // ======================= this works, but want to redo so input shows up in separate columns
         var newRow = $("<tr>").append(
             $("<td>").text("Train " +
                 newTrainName + " leaves for " +
                 newDest + " at " +
                 newFirstTime + " every " +
-                newTrainInt + " minutes" + " (next train arrives at " + nextTrainTimeConverted + ").")
+                newTrainInt + " minutes" + " (next train arrives in " + nextTrainInMins + " minutes" + " at " + nextTrainTimeConverted + ").")
         );
 
         $("#train-schedule").append(newRow);
+
+        // redoing appendings of train input ==============================================
+        // creating table row
+        // var $trainList = $("<tr>");
+        // $trainList.addClass("list-group");
+
+        // // append to html
+        // $("#train-schedule").append($trainList);
+
+        // // append train name to tr
+        // var trainData = addTrain;
+
+        // var $trainListItem = $("<td>");
+
+        // $trainListItem.append(
+        //     "<tr class='row'>" + trainData + "</tr>"
+        // );
+        // console.log($trainListItem + newTrainName);
+
         
     });
 
