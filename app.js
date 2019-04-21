@@ -87,29 +87,15 @@ $(document).ready(function () {
                 newTrainName + " leaves for " +
                 newDest + " at " +
                 newFirstTime + " every " +
-                newTrainInt + " minutes" + " (next train arrives in " + nextTrainInMins + " minutes" + " at " + nextTrainTimeConverted + ").")
+                newTrainInt + " minutes" + " (next train arrives in " + 
+                nextTrainInMins + " minutes" + " at " + 
+                nextTrainTimeConverted + ").")
         );
 
         $("#train-schedule").append(newRow);
 
         // redoing appendings of train input ==============================================
-        // creating table row
-        // var $trainList = $("<tr>");
-        // $trainList.addClass("list-group");
-
-        // // append to html
-        // $("#train-schedule").append($trainList);
-
-        // // append train name to tr
-        // var trainData = addTrain;
-
-        // var $trainListItem = $("<td>");
-
-        // $trainListItem.append(
-        //     "<tr class='row'>" + trainData + "</tr>"
-        // );
-        // console.log($trainListItem + newTrainName);
-
+        // var rtdName = $("<td>").text(snapshot.val().TrainNam);
         
     });
 
