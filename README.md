@@ -2,7 +2,7 @@
 This app tracks the schedules of different trains and lets the user add trains and their times to the database.
 
 ### Built with:
-* Firebase database
+* Google Firebase
 * Moment js (time conversions)
 * Javascript
 * HTML & CSS
